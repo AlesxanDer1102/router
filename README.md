@@ -1,8 +1,78 @@
-# React + Vite
+# React Router desde Cero
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una implementación personalizada de un enrutador React construido desde cero, inspirado en React Router.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Enrutamiento dinámico basado en componentes
+- Soporte para rutas anidadas
+- Navegación programática
+- Manejo de rutas dinámicas con parámetros
+- Internacionalización (i18n) integrada
+- Carga diferida (lazy loading) de componentes
+- Manejo de error 404
+
+## Instalación
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/AlesxanDer1102/router.git
+
+# Instalar dependencias
+pnpm install
+
+# Iniciar servidor de desarrollo
+pnpm dev
+```
+
+Uso
+
+```jsx
+import { Router, Route } from './Router'
+
+function App() {
+	return (
+		<Router>
+			<Route
+				path='/'
+				Component={HomePage}
+			/>
+			<Route
+				path='/about'
+				Component={AboutPage}
+			/>
+			<Route
+				path='/search/:query'
+				Component={SearchPage}
+			/>
+		</Router>
+	)
+}
+```
+
+API
+<Router>
+Componente principal que maneja el estado de la navegación.
+
+<Route>
+Define una ruta y su componente asociado.
+
+<Link>
+Componente para navegación declarativa.
+
+navigate()
+Función para navegación programática.
+
+Tests
+Los tests están escritos usando Vitest y React Testing Library.
+
+```bash
+# Ejecutar tests
+pnpm test
+
+# Ver reporte visual de tests
+pnpm test:ui
+```
+
+Licencia
+MIT
